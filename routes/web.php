@@ -43,3 +43,29 @@ Route::get('/admin/perfil', function () {
 Route::get('/admin/reportes', function () {
     return view('admin.reportes');
 });
+
+// Rutas de Cliente
+Route::get('/login', function () {
+    return view('public.login');
+});
+
+// Rutas de Superadmin
+Route::get('/superadmin/login', function () {
+    return view('superadmin.login');
+});
+
+Route::get('/superadmin/dashboard', function () {
+    return view('superadmin.dashboard');
+});
+
+Route::get('/superadmin/ajustes', function () {
+    return view('superadmin.ajustes');
+});
+
+Route::post('/superadmin/guardar-ajustes', function () {
+    return redirect('/superadmin/ajustes')->with('success', 'Ajustes guardados correctamente (Simulación).');
+});
+
+Route::get('/superadmin/suscripciones', function () {
+    return view('superadmin.suscripciones');
+});

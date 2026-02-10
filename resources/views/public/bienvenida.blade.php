@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>METRA - Bienvenido</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="zona-comensal">
 
     <nav class="navbar navbar-expand-lg py-4">
         <div class="container">
@@ -15,10 +16,11 @@
            <div class="ms-auto d-flex align-items-center gap-3">
     <a href="/detalles#info" class="nav-link-custom">Conócenos</a>
     <a href="/detalles#ubicacion" class="nav-link-custom">Ubicación</a>
+    <a href="/login" class="nav-link-custom">Iniciar Sesión</a>
     <a href="/reservar" class="btn-nav-reserva">Terminar Reserva</a>
 </div>
     </nav>
-    <hr>
+    <hr class="m-0" style="opacity: 0.1;">
 
     <main class="hero-container">
         <div class="container">
@@ -38,7 +40,7 @@
                     <div class="image-wrapper text-center">
                         <div class="image-bg-decoration"></div>
                         <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" 
-                             class="img-restaurante" alt="Restaurante">
+                             class="img-restaurante img-fluid rounded shadow-lg" alt="Restaurante" style="max-width: 100%; height: auto;">
                     </div>
                 </div>
 
@@ -46,11 +48,6 @@
         </div>
     </main>
 
-    <footer class="footer-admin text-center">
-        <div class="container">
-            <a href="/admin-login" class="admin-link">© 2026 METRA - Acceso Personal</a>
-        </div>
-    </footer>
-
+    @include('partials.footer')
 </body>
 </html>
